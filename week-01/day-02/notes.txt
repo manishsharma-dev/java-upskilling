@@ -1,0 +1,45 @@
+Array
+→ fixed size
+
+ArrayList
+→ resizable ordered collection
+→ allows duplicates
+→ access by index
+
+HashSet
+→ stores unique elements
+→ no duplicates
+→ useful for fast existence/membership checks
+→ don't rely on HashSet iteration order
+
+HashMap<K, V>
+→ stores key-value pairs
+→ keys are unique
+→ values can repeat
+→ putting another value for an existing key
+  replaces/updates its value
+
+Example:
+userId → User
+productId → Product
+word → occurrenceCount
+
+ordered collection → ArrayList
+
+unique collection → HashSet
+
+key → value lookup → HashMap
+
+TWO SUM
+
+Brute force:
+Compare every pair
+Time: O(n²)
+
+Better question:
+For current value x,
+what value do I need?
+
+complement = target - x
+
+Use a HashMap to remember values already seen.

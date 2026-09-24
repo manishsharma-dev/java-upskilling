@@ -1,0 +1,34 @@
+CLASS
+A blueprint/type defining the fields (data) and
+methods (behaviour) its objects can have.
+
+OBJECT
+An instance of a class created in memory.
+A variable like e1 can hold a reference to that object.
+
+CONSTRUCTOR
+Used to initialize a new object.
+Same name as class and has no return type.
+Can have multiple constructors with different
+parameter lists (constructor overloading).
+
+STATIC
+Belongs to the class rather than individual instances.
+There is one class-level variable shared across instances.
+
+FINAL
+A variable can be assigned once and cannot be
+reassigned afterward.
+
+
+REFERENCE EXAMPLE
+
+Employee e1 = new Employee(...);
+Employee e2 = e1;
+
+e1 ───┐
+      ├──→ same Employee object
+e2 ───┘
+
+e1 and e2 are different reference variables,
+but both refer to the same Employee object.
