@@ -1,0 +1,34 @@
+METHOD
+
+accessModifier returnType methodName(parameters)
+
+parameter → variable in method declaration
+argument  → actual value passed
+void      → returns nothing
+
+
+METHOD OVERLOADING
+
+Same method name + different parameter list.
+
+Can differ by:
+→ number of parameters
+→ parameter types
+
+Return type alone cannot overload a method.
+
+
+PRIMITIVE → WRAPPER
+
+int     → Integer
+double  → Double
+boolean → Boolean
+char    → Character
+
+Collections store objects.
+
+ArrayList<Integer> ✓
+ArrayList<int>     ✗
+
+Autoboxing: int → Integer
+Unboxing: Integer → int
