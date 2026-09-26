@@ -1,0 +1,58 @@
+ENCAPSULATION
+
+Keep an object's internal state controlled and expose
+operations through which other code can interact with it.
+
+Example:
+private balance
++
+deposit()
+withdraw()
+getBalance()
+
+private alone is not the entire idea.
+
+INHERITANCE
+
+Subclass can inherit from a superclass.
+
+Developer extends Employee
+
+Developer IS-A Employee.
+
+extends → establishes inheritance
+super(...) → invokes superclass constructor
+
+Developer IS-A Employee       ✓
+Manager IS-A Employee         ✓
+Employee IS-A Developer       ✗
+
+
+OVERLOADING
+Same method name + different parameters.
+
+OVERRIDING
+Subclass replaces inherited method behaviour
+with its own implementation.
+
+@Override helps compiler verify the intention.
+
+
+POLYMORPHISM
+
+A superclass reference can refer to subclass objects.
+
+Employee e = new Developer(...);
+
+For overridden instance methods:
+the actual object's implementation runs.
+
+Reference type determines what members are
+accessible through that reference.
+
+
+REFERENCE TYPE
+determines what you are allowed to call
+
+ACTUAL OBJECT TYPE
+determines which overridden implementation runs
