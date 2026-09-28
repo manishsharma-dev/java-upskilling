@@ -36,16 +36,14 @@ class Solutions{
 
 
         
-        int highestFreqElement = 0;
-        int highestFreqValue = 0;
-        for(Entry<Integer, Integer> entry: freq.entrySet()){
-            if(entry.getValue() > highestFreqValue){
-                highestFreqValue = entry.getValue();
-                highestFreqElement = entry.getKey();
-            }
+        
+        for (int ele : arr) {
+        if (freq.get(ele) == 1) {
+            return ele;
         }
+    }
 
-        return highestFreqElement;
+        return -1;
        
     }
 }
