@@ -21,6 +21,7 @@ public class Main {
     department.addEmployee(e101);
     department.addEmployee(e102);
     department.addEmployee(e103);
+    department.addEmployee(new Tester(201, "Raj", 50000, "Selenium"));
 
    //6. Find E102 FROM THE COMPANY using employeeId
     Employee employeeById = company.findEmployeeById(102);

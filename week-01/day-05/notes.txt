@@ -1,0 +1,21 @@
+ABSTRACT CLASS
+
+Represents a base concept that should not itself
+be instantiated.
+
+abstract class Employee
+
+Can contain:
+- fields
+- constructors
+- normal methods
+- abstract methods
+
+
+ABSTRACT METHOD
+
+Declares required behaviour without implementation.
+
+public abstract String work();
+
+Concrete subclasses must implement it.
