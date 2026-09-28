@@ -10,9 +10,7 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    public String work(){
-       return "Working";
-    }
+    public abstract String work();
 
     public int getEmployeeId(){
         return this.employeeId;
@@ -25,5 +23,7 @@ public abstract class Employee {
     public double getSalary(){
         return this.salary;
     }
-    public abstract String getDetails();
+    public String getDetails(){
+        return this.employeeId + " : " + this.name + " : " + this.salary;
+    }
 }

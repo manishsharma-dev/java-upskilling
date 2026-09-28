@@ -7,7 +7,7 @@ public class Tester extends Employee {
     }
 
     @Override
-      public String getDetails(){
+      public String work(){
        return getEmployeeId() + " : " + getName() + " : " + getSalary() + " : " + this.testingTool;
     }
 }
