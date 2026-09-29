@@ -10,4 +10,14 @@ public class Company {
      public Employee findEmployeeById(int employeeId){
         return empMap.get(employeeId);
      }
+
+     public String giveRaiseToEmployee(int employeeId, double percentage){
+         Employee employee = findEmployeeById(employeeId);
+
+         if(employee == null){
+            return "Please send a valid employee id";
+         }
+
+         return employee.giveRaise(percentage);
+     }
 }
