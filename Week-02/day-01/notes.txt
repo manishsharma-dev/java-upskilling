@@ -1,0 +1,30 @@
+Employee
+   ↓
+What the object IS
+
+Reportable
+   ↓
+What the object CAN DO
+
+ABSTRACT CLASS
+Common base abstraction.
+Can hold instance state, constructors, implemented methods
+and abstract methods.
+
+INTERFACE
+Defines a contract/capability a class can implement.
+
+extends → class inheritance
+implements → interface implementation
+
+A class extends one class but can implement multiple interfaces.
+
+Operation	Average
+ArrayList.get(i)	O(1)
+ArrayList.add(x) at end	O(1) amortized
+ArrayList.contains(x)	O(n)
+HashSet.contains(x)	O(1)
+HashSet.add(x)	O(1)
+HashMap.get(k)	O(1)
+HashMap.put(k,v)	O(1)
+HashMap.containsKey(k)	O(1)
