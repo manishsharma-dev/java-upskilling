@@ -1,0 +1,13 @@
+Exception = abnormal/error situation during execution.
+
+try = risky code
+catch = handle exception
+throw = explicitly throw an exception
+
+IllegalArgumentException is useful when
+a caller gives an invalid argument.
+
+Java does not force you to catch these.
+ArithmeticException
+NullPointerException
+IllegalArgumentException

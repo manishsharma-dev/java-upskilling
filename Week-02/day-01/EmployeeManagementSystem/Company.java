@@ -1,23 +1,28 @@
 import java.util.HashMap;
- 
+
 public class Company {
-     private HashMap<Integer, Employee> empMap  = new HashMap<>();
+   private HashMap<Integer, Employee> empMap = new HashMap<>();
 
-     public void addEmployee(Employee employee){
-        empMap.put(employee.getEmployeeId(), employee);
-     }
+   public void addEmployee(Employee employee) {
+      empMap.put(employee.getEmployeeId(), employee);
+   }
 
-     public Employee findEmployeeById(int employeeId){
-        return empMap.get(employeeId);
-     }
+   public Employee findEmployeeById(int employeeId) {
+      return empMap.get(employeeId);
+   }
 
-     public String giveRaiseToEmployee(int employeeId, double percentage){
+   public void giveRaiseToEmployee(int employeeId, double percentage){
          Employee employee = findEmployeeById(employeeId);
 
          if(employee == null){
-            return "Please send a valid employee id";
+            System.out.println("Invalid employee id");
          }
 
-         return employee.giveRaise(percentage);
+          try{
+             employee.giveRaise(percentage);
+          }
+          catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+          }
      }
 }

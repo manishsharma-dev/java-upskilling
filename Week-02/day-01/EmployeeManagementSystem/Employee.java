@@ -24,12 +24,11 @@ public abstract class Employee {
         return this.salary;
     }
 
-    public String giveRaise(double percentage) {
+    public void giveRaise(double percentage) {
         if (percentage <= 0 || percentage > 50) {
-            return "Please enter a valid percentage for raise";
+            throw new IllegalArgumentException("Raise percentage must be between 0 and 50");
         }
         salary = salary + (salary * (percentage / 100));
-        return "The new salary for " + name + " is: " + salary;
     }
 
     public String getDetails() {
