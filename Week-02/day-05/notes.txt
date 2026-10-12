@@ -1,0 +1,4 @@
+What does "String is immutable" mean?
+- It means that the value in a String variables can not be changed,
+     it can only be used to alter and either use it elsewhere or 
+     reassign.

@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Set;
 /*
 1.	
 	1. Employee e = new Manager(...);
@@ -51,7 +52,7 @@ class Solution {
     Space -> O(n)
     */
     public static int firstCommonOptimize(int[] a, int b[]) {
-        HashSet<Integer> aSet = new HashSet<>();
+        Set<Integer> aSet = new HashSet<>();
         for (int elem : a) {
             aSet.add(elem);
         }

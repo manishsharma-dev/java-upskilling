@@ -1,0 +1,105 @@
+List defines a contract but doesn't provide a concrete object that can be instantiated directly.
+
+Prefer the interface as the variable/parameter type when I only need the interface's contract. Use a concrete class to create the actual object. This reduces coupling to a specific implementation.
+
+Your Exercise A is essentially correct.
+A, B and D compile. C doesn't.
+But this:
+List can only be used as a reference
+
+isn't quite the mental model I want you to keep.
+Instead:
+List defines a contract but doesn't provide a concrete object that can be instantiated directly.
+
+So:
+List<String> names = new ArrayList<>();
+
+means:
+“I need something that behaves like a List. Currently, I've chosen ArrayList to provide that implementation.”
+
+That's where the coupling advantage comes from.
+Think about your Department
+Suppose we write:
+class Department {
+
+    private ArrayList<Employee> employees;
+
+    public Department() {
+        employees = new ArrayList<>();
+    }
+}
+
+The field says:
+My Department requires an ArrayList.
+
+But what does Department actually care about?
+Probably operations such as:
+employees.add(employee);
+employees.remove(employee);
+employees.size();
+
+It doesn't really care that the object happens to be specifically an ArrayList.
+So:
+private List<Employee> employees;
+
+public Department() {
+    employees = new ArrayList<>();
+}
+
+expresses the requirement better:
+Department needs a List of employees.
+ArrayList happens to be how we're implementing that list today.
+
+Why does that matter?
+Imagine later we discover another List implementation is more suitable.
+Conceptually, we could change:
+employees = new ArrayList<>();
+
+to:
+employees = new SomeOtherListImplementation<>();
+
+Code that only depends upon the List contract has a better chance of remaining unchanged.
+Compare:
+Department
+    ↓ depends upon
+ArrayList
+
+versus:
+Department
+    ↓ depends upon
+List contract
+    ↑
+ArrayList implements it
+
+The second is less coupled to the implementation.
+This same idea becomes extremely important when we eventually reach Spring.
+You'll see code shaped roughly like:
+Controller
+    ↓
+Service interface
+    ↑
+Service implementation
+
+rather than everything knowing the exact concrete classes underneath.
+There's another benefit
+Suppose I write:
+void printEmployees(ArrayList<Employee> employees)
+
+I've unnecessarily restricted callers to an ArrayList.
+Whereas:
+void printEmployees(List<Employee> employees)
+
+says:
+I accept anything satisfying the List contract.
+
+That's a more flexible API.
+Permanent note
+Write this one down:
+Prefer the interface as the variable/parameter type when I only need the interface's contract. Use a concrete class to create the actual object. This reduces coupling to a specific implementation.
+
+So:
+List<String> list = new ArrayList<>();
+Set<Integer> set = new HashSet<>();
+Map<Integer, Employee> map = new HashMap<>();
+
+Now don't turn this into an absolute rule. There are cases where you genuinely need functionality specific to a concrete implementation. We'll encounter those naturally.

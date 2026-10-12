@@ -1,0 +1,2 @@
+O(n) comes from the total number of inward
+ pointer movements being bounded by n,

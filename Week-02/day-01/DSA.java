@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 class Solution {
     
@@ -42,17 +43,17 @@ class Solution {
      *  Time is O(n)
      *  Space - not sure*(still confused with how space works)
      */
-    public static ArrayList<ArrayList<Integer>> allUniquePairs(int[] arr, int target) {
+    public static List<List<Integer>> allUniquePairs(int[] arr, int target) {
         HashSet<Integer> usedValues = new HashSet<>();
         HashSet<Integer> currentDiffs = new HashSet<>();
-        ArrayList<ArrayList<Integer>> finalList = new ArrayList<>();
+        List<List<Integer>> finalList = new ArrayList<>();
         
         for (int i = 0; i < arr.length; i++) {
            if(usedValues.contains(arr[i])) continue;
            int diff = target - arr[i];
 
            if(currentDiffs.contains(diff)){
-              ArrayList<Integer> tempPairs = new ArrayList<>();
+              List<Integer> tempPairs = new ArrayList<>();
               tempPairs.add(diff);
               tempPairs.add(arr[i]);
               finalList.add(tempPairs);
