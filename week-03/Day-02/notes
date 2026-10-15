@@ -1,0 +1,9 @@
+Day 17 — Correction sheet
+Topic	Your answer	Correction
+throw vs throws	throw handles an error through an exception	throw raises an exception. catch handles it. throws declares possible propagation.
+Generic invariance	List<Number> might accept ArrayList<Integer> because Number is the parent	It does not compile. List<Integer> is not a subtype of List<Number>.
+Generic method vs class	Class T sets class type; method T sets parameter type	A method's <T> is its own type parameter, usable for parameters, return values, and local declarations.
+Why counting zeroes is insufficient	The last element might be non-zero and need moving	Counting gives the number of zeroes, but doesn't preserve and reposition the non-zero elements.
+In-place requirement	“Return the array with zeroes at the end”	The method returns void. It modifies the existing array.
+One Java nuance worth remembering
+Your finally explanation from Day 16 was mostly correct. finally normally runs when control leaves try or catch, including when an exception propagates or a return occurs. But it isn't guaranteed if the JVM terminates abruptly.
